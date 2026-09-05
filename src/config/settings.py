@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
+    'pizza',
+    'order',
+    'canchas',
 ]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'

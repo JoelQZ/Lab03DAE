@@ -58,3 +58,28 @@ git commit -m "Proyecto inicial Django 5"
 ```
 
 No se configura ningun remoto ni se realiza `push` automaticamente.
+
+# Sistema de Gestión de Pizzería - Semana 02
+
+Aplicación web académica desarrollada en Django 5 para la gestión de una pizzería, incluyendo el control del menú de pizzas y el registro de pedidos de clientes.
+
+## Problemática y Requisitos Funcionales
+El sistema aborda la problemática del control operativo de una pizzería mediante dos módulos principales:
+1. **Menú (`pizza`)**: Permite listar las especialidades de la casa y registrar nuevas pizzas (nombre, tipo de masa, ingredientes y estado del stock).
+2. **Pedidos (`order`)**: Permite visualizar las órdenes registradas y agregar nuevos pedidos de clientes (nombre, teléfono, pizza solicitada, dirección y estado del pedido).
+
+## Arquitectura y Restricciones del Laboratorio
+* **Persistencia en Memoria RAM**: Siguiendo las restricciones del laboratorio, **no se utiliza base de datos relacional (SQL) ni el ORM de Django (`models.Model`)**. La información se gestiona mediante listas de diccionarios en memoria en `models.py` (`PIZZAS_DB` y `ORDERS_DB`). Los datos son volátiles y se reinician junto con el servidor.
+* **Formularios**: Implementados mediante la clase `forms.Form` con campos validados (`CharField`, `ChoiceField`, `Textarea`).
+* **Heredabilidad de Plantillas**: Vistas basadas en plantillas HTML que extienden de la estructura base unificada `core/base.html`.
+
+## Estructura de Apps
+* `pizza`: Aplicación encargada del menú y catálogo de productos.
+* `order`: Aplicación encargada del registro y flujo de delivery/pedidos.
+* `core`: Aplicación base que provee el diseño estructural del proyecto.
+
+## Instalación y Ejecución
+
+1. Activar el entorno virtual desde la raíz del proyecto:
+   ```powershell
+   .\venv\Scripts\Activate.ps1
